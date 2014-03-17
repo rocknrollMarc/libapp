@@ -4,7 +4,6 @@ require "spec_helper"
 describe "readers/new.html.erb" do
   before :each do
     reader = mock_model("Reader").as_new_record.as_null_object
-    reader.stub(:email).and_return("someemail")
     assign(:reader, reader)
     render
   end
@@ -15,7 +14,8 @@ describe "readers/new.html.erb" do
   end
 
   it "has reader_email field" do
-
+    reader = mock_model("Reader", email: "email@email.com")
+    render
         expect(rendered).to have_selector('#reader_email')
   end
 
