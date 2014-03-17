@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 group :develpment, :test do
   gem 'rspec-rails'
+  gem 'spork'
+  gem 'spork-rails'
 
 end
 
